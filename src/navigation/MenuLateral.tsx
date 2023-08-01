@@ -4,7 +4,6 @@ import {
   DrawerContentScrollView,
   createDrawerNavigator,
 } from "@react-navigation/drawer";
-import {StackNavigator} from "./StackNavigator";
 import {SettingsScreen} from "../screens";
 import {
   Image,
@@ -14,6 +13,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import {styles} from "../theme/theme";
+import {Tabs} from "./Tabs";
 
 const Drawer = createDrawerNavigator();
 
@@ -28,7 +28,7 @@ export const MenuLateral = () => {
         drawerType: width >= 768 ? "permanent" : "front", // Menú modo horizontal
         // headerShown: false, // Oculta la hamburguesa
       }}>
-      <Drawer.Screen name="SatckNavigator" component={StackNavigator} />
+      <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   );
@@ -52,7 +52,7 @@ const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
       <View style={styles.menuContainer}>
         <TouchableOpacity
           style={styles.menuLink}
-          onPress={() => navigation.navigate("SatckNavigator")}>
+          onPress={() => navigation.navigate("Tabs")}>
           <Text style={styles.menuLinkText}>Navegacion</Text>
         </TouchableOpacity>
 
