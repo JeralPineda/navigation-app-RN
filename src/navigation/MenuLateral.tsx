@@ -35,7 +35,6 @@ export const MenuLateral = () => {
 };
 
 const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
-  console.log(navigation);
   return (
     <DrawerContentScrollView>
       {/* Avatar */}
