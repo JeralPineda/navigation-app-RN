@@ -32,4 +32,27 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  avatarContainer: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+  },
+  menuContainer: {
+    marginVertical: 30,
+    marginHorizontal: 50,
+  },
+  menuLink: {
+    marginVertical: 10,
+    backgroundColor: "#2a7bcb",
+    padding: 10,
+    borderRadius: 6,
+  },
+  menuLinkText: {
+    fontSize: 16,
+    color: "#fff",
+  },
 });
