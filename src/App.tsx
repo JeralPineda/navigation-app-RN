@@ -2,8 +2,9 @@ import "react-native-gesture-handler";
 
 import React from "react";
 import {NavigationContainer} from "@react-navigation/native";
-import {MenuLateral} from "./navigation";
 import {PaperProvider} from "react-native-paper";
+
+import {MenuLateral} from "./navigation";
 import {AuthProvider} from "./context/AuthContext";
 
 function App() {
@@ -16,9 +17,9 @@ function App() {
   return (
     <PaperProvider theme={myNavigationTheme}>
       <NavigationContainer>
-        {/* <StackNavigator /> */}
-        {/* <MenuLateralBasico /> */}
         <AppState>
+          {/* <StackNavigator /> */}
+          {/* <MenuLateralBasico /> */}
           <MenuLateral />
         </AppState>
       </NavigationContainer>
