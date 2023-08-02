@@ -14,7 +14,7 @@ export const Tabs = () => {
 
 const BottomTabAndroid = createMaterialBottomTabNavigator();
 
-function TabsAndroid() {
+const TabsAndroid = () => {
   return (
     <BottomTabAndroid.Navigator
       sceneAnimationEnabled={true}
@@ -70,7 +70,7 @@ function TabsAndroid() {
       />
     </BottomTabAndroid.Navigator>
   );
-}
+};
 
 const ButtonTabIOS = createBottomTabNavigator();
 
