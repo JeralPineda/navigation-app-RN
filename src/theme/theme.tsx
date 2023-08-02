@@ -54,9 +54,12 @@ export const styles = StyleSheet.create({
     backgroundColor: "#2a7bcb",
     padding: 10,
     borderRadius: 6,
+    alignItems: "center",
+    flexDirection: "row",
   },
   menuLinkText: {
     fontSize: 16,
     color: "#fff",
+    marginLeft: 4,
   },
 });

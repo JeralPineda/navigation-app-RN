@@ -4,6 +4,8 @@ import {
   DrawerContentScrollView,
   createDrawerNavigator,
 } from "@react-navigation/drawer";
+import Icon from "react-native-vector-icons/Ionicons";
+
 import {SettingsScreen} from "../screens";
 import {
   Image,
@@ -12,8 +14,9 @@ import {
   View,
   useWindowDimensions,
 } from "react-native";
-import {styles} from "../theme/theme";
+import {colors, styles} from "../theme/theme";
 import {Tabs} from "./Tabs";
+import {DrawerActions} from "@react-navigation/native";
 
 const Drawer = createDrawerNavigator();
 
@@ -24,10 +27,17 @@ export const MenuLateral = () => {
     <Drawer.Navigator
       // eslint-disable-next-line react/no-unstable-nested-components
       drawerContent={props => <MenuInterno {...props} />}
-      screenOptions={{
+      screenOptions={({navigation}) => ({
         drawerType: width >= 768 ? "permanent" : "front", // Menú modo horizontal
         // headerShown: false, // Oculta la hamburguesa
-      }}>
+        headerLeft: () => (
+          <TouchableOpacity
+            style={{marginLeft: 10}}
+            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
+            <Icon name="grid-outline" size={24} color={colors.primary} />
+          </TouchableOpacity>
+        ),
+      })}>
       <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingScreen" component={SettingsScreen} />
     </Drawer.Navigator>
@@ -52,12 +62,18 @@ const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
         <TouchableOpacity
           style={styles.menuLink}
           onPress={() => navigation.navigate("Tabs")}>
+          <Text>
+            <Icon name="compass-outline" size={20} color="#fff" />
+          </Text>
           <Text style={styles.menuLinkText}>Navegacion</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuLink}
           onPress={() => navigation.navigate("SettingScreen")}>
+          <Text>
+            <Icon name="cog-outline" size={20} color="#fff" />
+          </Text>
           <Text style={styles.menuLinkText}>Ajustes</Text>
         </TouchableOpacity>
       </View>

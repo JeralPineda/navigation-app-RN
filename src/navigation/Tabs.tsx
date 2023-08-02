@@ -3,6 +3,7 @@ import React from "react";
 import {Platform, Text} from "react-native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {createMaterialBottomTabNavigator} from "@react-navigation/material-bottom-tabs";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import {Tab1Screen} from "../screens";
 import {StackNavigator} from "./StackNavigator";
@@ -36,18 +37,18 @@ const TabsAndroid = () => {
           let iconName: string = "";
           switch (route.name) {
             case "Tab1Screen":
-              iconName = "T1";
+              iconName = "chatbubble-outline";
               break;
 
             case "Tab2Screen":
-              iconName = "T2";
+              iconName = "call-outline";
               break;
 
             case "StackNavigator":
-              iconName = "ST";
+              iconName = "images-outline";
               break;
           }
-          return <Text style={{color: color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       <BottomTabAndroid.Screen
@@ -95,18 +96,22 @@ const TabsIOS = () => {
           let iconName: string = "";
           switch (route.name) {
             case "Tab1Screen":
-              iconName = "T1";
+              iconName = "chatbubble-outline";
               break;
 
             case "Tab2Screen":
-              iconName = "T2";
+              iconName = "call-outline";
               break;
 
             case "StackNavigator":
-              iconName = "ST";
+              iconName = "images-outline";
               break;
           }
-          return <Text style={{color: color}}>{iconName}</Text>;
+          return (
+            <Text>
+              <Icon name={iconName} size={20} color={color} />
+            </Text>
+          );
         },
       })}>
       <ButtonTabIOS.Screen
