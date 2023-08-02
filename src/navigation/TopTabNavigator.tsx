@@ -3,7 +3,6 @@ import {AlbumsScreen, ChatScreen, ContactsScreen} from "../screens";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import {colors} from "../theme/theme";
 import {Text} from "react-native";
-import {transparent} from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -35,7 +34,7 @@ export const TopTabNavigator = () => {
           flexDirection: "row",
           justifyContent: "center",
         },
-        tabBarIcon: ({focused, color}) => {
+        tabBarIcon: ({color}) => {
           let iconName: string = "";
           switch (route.name) {
             case "Chat":
