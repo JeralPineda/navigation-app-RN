@@ -34,7 +34,7 @@ export const MenuLateral = () => {
           <TouchableOpacity
             style={{marginLeft: 10}}
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-            <Icon name="grid-outline" size={24} color={colors.primary} />
+            <Icon name="grid" size={24} color={colors.primary} />
           </TouchableOpacity>
         ),
       })}>
